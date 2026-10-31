@@ -72,7 +72,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--cream);
+    background: var(--white);
     border-bottom: 1px solid var(--line);
     position: relative;
     z-index: 10;
