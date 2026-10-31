@@ -52,6 +52,11 @@ button {
 
 /* HEADER */
 
+img {
+  width: 180px;
+  height: auto;
+}
+
 .site-header {
     min-height: 95px;
     padding: 20px 7%;
