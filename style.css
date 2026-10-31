@@ -184,31 +184,6 @@ button {
 
 /* HERO ART */
 
-.hero-art {
-    min-height: 420px;
-    background: var(--dusty-pink);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hero-art::before {
-    content: "";
-    width: 270px;
-    height: 270px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    position: absolute;
-}
-
-.hero-flower {
-    width: 260px;
-    max-width: 75%;
-    position: relative;
-    z-index: 1;
-}
 
 .art-label,
 .art-bottom {
