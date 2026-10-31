@@ -53,18 +53,16 @@ button {
 /* HEADER */
 
 .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 0;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .hero-image img {
     display: block;
     width: 100%;
-    max-width: 420px;
-    max-height: 420px;
-    height: auto;
+    height: 250px;
     object-fit: contain;
 }
 
