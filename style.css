@@ -216,7 +216,7 @@ button {
     bottom: 76px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--cream);
+    background: var(--white);
     padding: 10px 24px;
     text-align: center;
     z-index: 3;
@@ -610,7 +610,7 @@ button {
         align-items: stretch;
         gap: 0;
         padding: 10px 6% 20px;
-        background: var(--cream);
+        background: var(--white);
         border-bottom: 1px solid var(--line);
     }
 
