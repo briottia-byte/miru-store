@@ -52,11 +52,20 @@ button {
 
 /* HEADER */
 
-.page img {
-  width: 180px;
-  height: auto;
-  display: block;
-  object-fit: contain;
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    max-height: 420px;
+    height: auto;
+    object-fit: contain;
 }
 
 .site-header {
@@ -116,7 +125,7 @@ button {
 /* HERO */
 
 .hero {
-    min-height: 50px;
+    min-height: 570px;
     padding: 75px 10%;
     display: grid;
     grid-template-columns: 1fr 0.9fr;
@@ -125,7 +134,7 @@ button {
 }
 
 .hero-content {
-    max-width: 50px;
+    max-width: 520px;
 }
 
 .eyebrow {
