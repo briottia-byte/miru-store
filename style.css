@@ -52,9 +52,11 @@ button {
 
 /* HEADER */
 
-img {
-  width: 180px;
+.page img {
+  width: 120px;
   height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .site-header {
