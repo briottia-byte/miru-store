@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    background: var(--white);
+    background: var(--cream);
     color: var(--text);
     font-family: "DM Sans", sans-serif;
 }
@@ -216,7 +216,7 @@ button {
     bottom: 76px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--white);
+    background: var(--cream);
     padding: 10px 24px;
     text-align: center;
     z-index: 3;
