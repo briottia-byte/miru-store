@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    background: var(--cream);
+    background: var(--white);
     color: var(--text);
     font-family: "DM Sans", sans-serif;
 }
