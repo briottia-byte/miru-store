@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop — Miru</title>
+    <meta name="description" content="Discover the Miru collection.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
+
+    <script src="script.js" defer></script>
+    <script src="shop.js" defer></script>
+</head>
+
+<body>
+
+    <div class="announcement">
+        A LITTLE SPACE FOR EVERYTHING YOU HAVE YET TO BECOME.
+    </div>
+
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-name">miru</span>
+            <span class="brand-tagline">born somewhere to do something</span>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+            <a href="shop.html">Shop</a>
+            <a href="index.html#about">Our story</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="shop-page">
+
+        <section class="shop-intro">
+            <p class="eyebrow">THE MIRU COLLECTION</p>
+            <h1>Little things.<br><em>Meaningful moments.</em></h1>
+            <p>Explore the objects made to become part of your everyday.</p>
+        </section>
+
+        <section class="shop-content">
+
+            <div class="shop-toolbar">
+                <div>
+                    <p class="eyebrow">DISCOVER YOUR FAVORITES</p>
+                    <h2>All products</h2>
+                </div>
+
+                <input
+                    type="search"
+                    id="product-search"
+                    placeholder="Search products..."
+                    aria-label="Search products"
+                >
+            </div>
+
+            <p id="shop-status">Loading the Miru collection...</p>
+
+            <div class="product-grid" id="product-grid"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div>
+                <a href="index.html" class="footer-logo">miru.</a>
+                <p>Born somewhere to do something.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="shop.html">Shop</a>
+                <a href="index.html#about">Our story</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Miru. All rights reserved.</span>
+            <span>Made for the little moments.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
