@@ -1,4 +1,3 @@
-
 /* ==========================================
    MIRU — MAIN STYLESHEET
    Homepage + shared elements
@@ -19,6 +18,7 @@
     --terracotta: #B87968;
     --pale-yellow: #EEE6CC;
 }
+
 
 /* RESET */
 
@@ -48,6 +48,7 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
 
 /* TYPOGRAPHY */
 
@@ -84,6 +85,7 @@ h3 {
     z-index: 10;
 }
 
+
 /* LOGO */
 
 .brand {
@@ -110,6 +112,7 @@ h3 {
     color: var(--muted);
     letter-spacing: 1.5px;
 }
+
 
 /* NAVIGATION */
 
@@ -174,6 +177,7 @@ h3 {
     line-height: 2;
     margin-bottom: 38px;
 }
+
 
 /* HERO IMAGE */
 
@@ -268,122 +272,86 @@ h3 {
 }
 
 
-/* PRODUCT GRID */
+/* ==========================================
+   HOMEPAGE PRODUCT GRID
+========================================== */
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+.home-product-status {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
 }
 
-.product-card {
+.home-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.home-product-card {
     min-width: 0;
 }
 
-.product-art {
+.home-product-image-link {
     position: relative;
+    display: block;
+    width: 100%;
     aspect-ratio: 4 / 4.5;
-    min-height: 270px;
-    margin-bottom: 20px;
-    padding: 18px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
     overflow: hidden;
-    transition: transform 0.35s ease;
+    background: var(--cream);
+    margin-bottom: 18px;
 }
 
-.product-card:hover .product-art {
-    transform: translateY(-5px);
+.home-product-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.product-art span {
-    position: relative;
-    z-index: 2;
-    color: var(--muted);
-    font-size: 11px;
+.home-product-card:hover .home-product-image-link img {
+    transform: scale(1.045);
+}
+
+.home-product-number {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    color: var(--dark-olive);
+    font-size: 10px;
     letter-spacing: 2px;
 }
 
-/* DECORATIVE ABSTRACT GRAPHICS */
-
-.product-art::before {
-    content: "";
-    position: absolute;
-    width: 125px;
-    height: 125px;
-    border: 1px solid rgba(80, 76, 64, 0.2);
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.product-art::after {
-    content: "";
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background: rgba(255, 252, 247, 0.32);
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* FOUR DIFFERENT PALETTES */
-
-.mug-art {
-    background:
-        radial-gradient(
-            circle at 30% 75%,
-            rgba(184, 121, 104, 0.18),
-            transparent 38%
-        ),
-        #E9DED0;
-}
-
-.tote-art {
-    background:
-        radial-gradient(
-            circle at 70% 25%,
-            rgba(98, 107, 80, 0.18),
-            transparent 38%
-        ),
-        #DCE1D3;
-}
-
-.notebook-art {
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            rgba(184, 121, 104, 0.18),
-            transparent 40%
-        ),
-        #EAD5D0;
-}
-
-.bottle-art {
-    background:
-        radial-gradient(
-            circle at 70% 75%,
-            rgba(98, 107, 80, 0.17),
-            transparent 38%
-        ),
-        #D9E0D7;
-}
-
-.product-card h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: var(--text);
-    font-size: 19px;
+.home-product-category {
+    color: var(--terracotta);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
     margin-bottom: 7px;
 }
 
-.product-card p {
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.7;
+.home-product-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--text);
+    font-size: 19px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.home-product-discover {
+    display: inline-block;
+    color: var(--dark-olive);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.home-product-discover:hover {
+    color: var(--terracotta);
 }
 
 .collection-action {
@@ -537,7 +505,7 @@ h3 {
         font-size: 48px;
     }
 
-    .product-grid {
+    .home-product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 35px 20px;
     }
@@ -607,32 +575,22 @@ h3 {
         font-size: 35px;
     }
 
-    .product-grid {
+    .home-product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 28px 13px;
     }
 
-    .product-art {
-        min-height: 0;
-        padding: 12px;
-    }
-
-    .product-art::before {
-        width: 95px;
-        height: 95px;
-    }
-
-    .product-art::after {
-        width: 55px;
-        height: 55px;
-    }
-
-    .product-card h3 {
+    .home-product-card h3 {
         font-size: 16px;
     }
 
-    .product-card p {
-        font-size: 11px;
+    .home-product-category {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    .home-product-image-link {
+        margin-bottom: 13px;
     }
 
     .about {
