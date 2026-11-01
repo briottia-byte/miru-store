@@ -734,3 +734,26 @@ button:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* HEADER LOGO */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand img {
+    display: block;
+    width: auto;
+    height: 48px;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .brand img {
+        height: 40px;
+    }
+}
