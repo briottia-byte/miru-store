@@ -1,18 +1,22 @@
 
-/* SHOP PAGE */
+/* ==========================
+   MIRU — SHOP PAGE
+========================== */
 
 .shop-page {
     min-height: 70vh;
 }
 
+/* INTRO */
+
 .shop-intro {
     text-align: center;
-    padding: 100px 20px 85px;
+    padding: 55px 20px 45px;
     background: var(--cream);
 }
 
-.eyebrow {
-    font-size: 10px;
+.shop-intro .eyebrow {
+    font-size: 9px;
     letter-spacing: 2px;
     font-weight: 600;
     color: var(--muted);
@@ -20,10 +24,10 @@
 
 .shop-intro h1 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(42px, 7vw, 76px);
+    font-size: clamp(30px, 4vw, 48px);
     font-weight: 500;
-    line-height: 1.1;
-    margin: 25px 0;
+    line-height: 1.15;
+    margin: 15px 0;
     color: var(--text);
 }
 
@@ -34,37 +38,41 @@
 
 .shop-intro > p:last-child {
     color: var(--muted);
-    font-size: 14px;
+    font-size: 12px;
 }
 
+/* SHOP CONTENT */
+
 .shop-content {
-    max-width: 1250px;
+    max-width: 1100px;
     margin: auto;
-    padding: 75px 6%;
+    padding: 45px 5%;
 }
+
+/* TOOLBAR */
 
 .shop-toolbar {
     display: flex;
     align-items: end;
     justify-content: space-between;
-    gap: 25px;
-    margin-bottom: 35px;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .shop-toolbar h2 {
     font-family: "Playfair Display", serif;
-    font-size: 36px;
+    font-size: 27px;
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 #product-search {
-    width: 240px;
-    padding: 13px 15px;
+    width: 210px;
+    padding: 10px 12px;
     border: 1px solid var(--line);
     background: transparent;
     font-family: inherit;
-    font-size: 13px;
+    font-size: 12px;
     outline: none;
 }
 
@@ -72,16 +80,22 @@
     border-color: var(--olive);
 }
 
+/* STATUS */
+
 #shop-status {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--muted);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
+
+/* PRODUCT GRID */
 
 #product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 35px 22px;
+    gap: 25px 18px;
+    max-width: 950px;
+    margin: auto;
 }
 
 #product-grid .product-card {
@@ -90,46 +104,69 @@
 
 #product-grid .product-image {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
     background: var(--dusty-pink);
 }
 
+/* PRODUCT DETAILS */
+
 #product-grid h3 {
     font-family: "Playfair Display", serif;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
-    margin: 16px 0 10px;
+    margin: 12px 0 8px;
+    color: var(--text);
 }
 
 .product-link {
     display: inline-block;
     color: var(--olive);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
     border-bottom: 1px solid var(--pink);
-    padding-bottom: 4px;
+    padding-bottom: 3px;
 }
 
 .product-link:hover {
     color: var(--pink);
 }
 
-@media (max-width: 700px) {
+/* TABLET */
+
+@media (max-width: 900px) {
+    #product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 15px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
     .shop-intro {
-        padding: 75px 20px;
+        padding: 42px 16px 35px;
+    }
+
+    .shop-intro h1 {
+        font-size: 31px;
     }
 
     .shop-content {
-        padding: 55px 5%;
+        padding: 35px 16px;
     }
 
     .shop-toolbar {
         align-items: stretch;
         flex-direction: column;
+        gap: 12px;
+    }
+
+    .shop-toolbar h2 {
+        font-size: 24px;
     }
 
     #product-search {
@@ -138,10 +175,10 @@
 
     #product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px 13px;
+        gap: 20px 12px;
     }
 
     #product-grid h3 {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
