@@ -1,0 +1,56 @@
+
+/* HEADER */
+.site-header {
+    height: 95px;
+    min-height: 95px;
+    padding: 12px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+}
+
+/* MIRU WORDMARK */
+.brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 48px;
+    color: var(--dark-olive);
+    letter-spacing: -3px;
+}
+
+.brand-tagline {
+    margin-top: 3px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .site-header {
+        height: 75px;
+        min-height: 75px;
+        padding: 10px 6%;
+    }
+
+    .brand-name {
+        font-size: 38px;
+    }
+
+    .brand-tagline {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+}
