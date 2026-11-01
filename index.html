@@ -1,211 +1,185 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Miru — Born Somewhere to Do Something</title>
-    <meta name="description" content="Discover Miru: thoughtful everyday objects, inspired by little moments and big ideas.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <title>Miru — Objects for Everyday Living</title>
+    <meta name="description" content="Discover Miru: thoughtful everyday objects, designed to bring a little beauty into your routine.">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <div class="announcement">
-        A LITTLE SPACE FOR EVERYTHING YOU HAVE YET TO BECOME.
-    </div>
-
+    <!-- HEADER -->
     <header class="site-header">
-        <a href="#" class="brand">
-            <span class="brand-name">miru</span>
-            <span class="brand-tagline">born somewhere to do something</span>
-        </a>
 
-        <button class="menu-toggle" id="menu-toggle"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="main-nav">
-            <span></span>
-            <span></span>
-        </button>
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="Miru">
+        </a>
 
         <nav class="main-nav" id="main-nav">
             <a href="shop.html">Shop</a>
             <a href="#about">Our story</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
+
+    <!-- HERO -->
     <main>
 
-        <!-- HERO SECTION -->
-
         <section class="hero">
+
             <div class="hero-content">
-                <p class="eyebrow">THE LITTLE THINGS MATTER</p>
+
+                <p class="eyebrow">A LITTLE MORE MEANING, EVERY DAY</p>
 
                 <h1>
-                    Everyday things,<br>
-                    <em>with a little meaning.</em>
+                    Born somewhere.<br>
+                    Made for everywhere.
                 </h1>
 
                 <p class="hero-description">
-                    Objects made to be part of your everyday.
-                    For your thoughts, your plans and all the little
-                    moments in between.
+                    Everyday objects, thoughtful details and little things
+                    that make ordinary moments feel special.
                 </p>
 
                 <a href="shop.html" class="button button-dark">
                     EXPLORE THE COLLECTION
                 </a>
+
             </div>
-            <div class="hero-image"> 
-            <img src="images/page.png" alt="Miru">
+
+            <div class="hero-image">
+                <img src="images/page.png" alt="Discover the Miru collection">
             </div>
+
         </section>
-        <!-- COLLECTION -->
 
-        <section class="collection section-padding" id="collection">
+
+        <!-- COLLECTION PREVIEW -->
+        <section class="collection" id="collection">
+
             <div class="section-heading">
-                <div>
-                    <p class="eyebrow">MADE FOR EVERYDAY MOMENTS</p>
-                    <h2>The Miru collection</h2>
-                </div>
 
-                <p class="section-description">
-                    Little essentials. A little inspiration.
-                    A lot of room to make them yours.
+                <p class="eyebrow">MADE FOR YOUR EVERYDAY</p>
+
+                <h2>The collection</h2>
+
+                <p>
+                    Objects to use, carry, keep and make your own.
                 </p>
+
             </div>
 
             <div class="product-grid">
 
                 <article class="product-card">
-                    <div class="product-art art-mug">
-                        <span class="product-object mug-object">
-                            <span class="mug-handle"></span>
-                            <span class="object-logo">miru</span>
-                        </span>
-                        <span class="art-caption">SLOW MORNINGS</span>
+                    <div class="product-art mug-art">
+                        <span>01</span>
                     </div>
-
-                    <div class="product-info">
-                        <div>
-                            <h3>The Everyday Mug</h3>
-                            <p>For your little rituals</p>
-                        </div>
-                        <span class="product-number">01</span>
-                    </div>
+                    <h3>The Everyday Mug</h3>
+                    <p>For slow mornings and little rituals.</p>
                 </article>
 
                 <article class="product-card">
-                    <div class="product-art art-tote">
-                        <span class="product-object tote-object">
-                            <span class="tote-handle"></span>
-                            <span class="object-logo">miru</span>
-                        </span>
-                        <span class="art-caption">TAKE A LITTLE INSPIRATION</span>
+                    <div class="product-art tote-art">
+                        <span>02</span>
                     </div>
-
-                    <div class="product-info">
-                        <div>
-                            <h3>The Botanical Tote</h3>
-                            <p>For wherever life takes you</p>
-                        </div>
-                        <span class="product-number">02</span>
-                    </div>
+                    <h3>The Botanical Tote</h3>
+                    <p>Take a little piece of Miru everywhere.</p>
                 </article>
 
                 <article class="product-card">
-                    <div class="product-art art-notebook">
-                        <span class="product-object notebook-object">
-                            <span class="object-logo">miru</span>
-                        </span>
-                        <span class="art-caption">ROOM FOR YOUR IDEAS</span>
+                    <div class="product-art notebook-art">
+                        <span>03</span>
                     </div>
-
-                    <div class="product-info">
-                        <div>
-                            <h3>The Spiral Notebook</h3>
-                            <p>For everything on your mind</p>
-                        </div>
-                        <span class="product-number">03</span>
-                    </div>
+                    <h3>The Spiral Notebook</h3>
+                    <p>For ideas, notes and everything in between.</p>
                 </article>
 
                 <article class="product-card">
-                    <div class="product-art art-bottle">
-                        <span class="product-object bottle-object">
-                            <span class="bottle-cap"></span>
-                            <span class="object-logo">miru</span>
-                        </span>
-                        <span class="art-caption">A MOMENT FOR YOURSELF</span>
+                    <div class="product-art bottle-art">
+                        <span>04</span>
                     </div>
-
-                    <div class="product-info">
-                        <div>
-                            <h3>The Everyday Bottle</h3>
-                            <p>A little companion for the day</p>
-                        </div>
-                        <span class="product-number">04</span>
-                    </div>
+                    <h3>The Everyday Bottle</h3>
+                    <p>A simple companion for every day.</p>
                 </article>
 
             </div>
+
+            <div class="collection-action">
+                <a href="shop.html" class="button button-outline">
+                    VIEW ALL PRODUCTS
+                </a>
+            </div>
+
         </section>
 
-        <!-- BRAND STORY -->
 
-        <section class="about-section" id="about">
-            <div class="about-mark">m.</div>
+        <!-- ABOUT -->
+        <section class="about" id="about">
+
+            <div class="about-mark">
+                <span>m.</span>
+            </div>
 
             <div class="about-content">
+
                 <p class="eyebrow">A NOTE FROM MIRU</p>
 
-                <h2>
-                    You don't have to have<br>
-                    it all figured out.
-                </h2>
+                <h2>It's the little things.</h2>
 
                 <p>
-                    Miru is about the little things that make
-                    everyday life feel like your own.
-                    A place for ideas, quiet moments and new beginnings.
+                    We believe everyday objects can be more than just useful.
+                    They can hold memories, express personality and bring
+                    beauty into the simplest moments.
                 </p>
 
-                <p class="about-signature">Make room for becoming.</p>
+                <p>
+                    Miru is about finding something special in the everyday.
+                </p>
+
+                <a href="shop.html" class="text-link">
+                    DISCOVER MIRU →
+                </a>
+
             </div>
+
         </section>
 
-        <!-- FOOTER -->
-
-        <footer class="site-footer" id="contact">
-            <div class="footer-top">
-                <div>
-                    <a href="#" class="footer-logo">miru.</a>
-                    <p>Born somewhere to do something.</p>
-                </div>
-
-                <div class="footer-links">
-                    <a href="shop.html">Shop</a>
-                    <a href="#about">Our story</a>
-                    <a href="mailto:hello@miru.com">Contact</a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <span>© 2026 Miru. All rights reserved.</span>
-                <span>Made for the little moments.</span>
-            </div>
-        </footer>
-
     </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <h2>miru.</h2>
+                <p>Little things. Everyday meaning.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>EXPLORE</h3>
+                <a href="shop.html">Shop</a>
+                <a href="#about">Our story</a>
+                <a href="mailto:hello@miru.com">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Miru. All rights reserved.</p>
+            <p>Made for the everyday.</p>
+        </div>
+
+    </footer>
 
 </body>
 </html>
