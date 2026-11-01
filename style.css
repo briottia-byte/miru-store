@@ -1,8 +1,10 @@
 
-/* =================================
-   MIRU — HOMEPAGE
-   Editorial / Soft Botanical
-================================= */
+/* =========================================
+   MIRU — MAIN STYLESHEET
+   Editorial / Botanical / Minimal
+========================================= */
+
+/* COLORS */
 
 :root {
     --cream: #F2EAE0;
@@ -20,6 +22,8 @@
     --terracotta: #B87968;
     --pale-yellow: #EEE6CC;
 }
+
+/* RESET */
 
 * {
     margin: 0;
@@ -283,6 +287,8 @@ button {
     line-height: 1.8;
 }
 
+/* PRODUCT GRID */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -311,6 +317,8 @@ button {
     border: 1px solid rgba(89, 100, 71, 0.15);
     border-radius: 50%;
 }
+
+/* DIFFERENT PRODUCT COLORS */
 
 .art-mug {
     background: #E9DED0;
@@ -435,6 +443,8 @@ button {
     letter-spacing: 1.2px;
     color: var(--olive);
 }
+
+/* PRODUCT INFO */
 
 .product-info {
     display: flex;
