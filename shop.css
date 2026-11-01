@@ -1,10 +1,12 @@
 
-/* ==========================
-   MIRU — SHOP PAGE
-========================== */
+/* =================================
+   MIRU — SHOP
+   Editorial / Soft Botanical
+================================= */
 
 .shop-page {
     min-height: 70vh;
+    background: var(--white);
 }
 
 /* INTRO */
@@ -12,14 +14,14 @@
 .shop-intro {
     text-align: center;
     padding: 55px 20px 45px;
-    background: var(--cream);
+    background: #DCE1D3;
 }
 
 .shop-intro .eyebrow {
     font-size: 9px;
     letter-spacing: 2px;
     font-weight: 600;
-    color: var(--muted);
+    color: #626B50;
 }
 
 .shop-intro h1 {
@@ -28,25 +30,26 @@
     font-weight: 500;
     line-height: 1.15;
     margin: 15px 0;
-    color: var(--text);
+    color: #343D32;
 }
 
 .shop-intro h1 em {
-    color: var(--pink);
+    color: #B87968;
     font-weight: 500;
 }
 
 .shop-intro > p:last-child {
-    color: var(--muted);
+    color: #777B70;
     font-size: 12px;
 }
 
-/* SHOP CONTENT */
+/* CONTENT */
 
 .shop-content {
     max-width: 1100px;
     margin: auto;
     padding: 45px 5%;
+    background: #FFFCF7;
 }
 
 /* TOOLBAR */
@@ -64,27 +67,33 @@
     font-size: 27px;
     font-weight: 500;
     margin-top: 7px;
+    color: #343D32;
 }
 
 #product-search {
     width: 210px;
     padding: 10px 12px;
-    border: 1px solid var(--line);
-    background: transparent;
+    border: 1px solid #E4D8CC;
+    background: #F8F5EF;
+    color: #34372F;
     font-family: inherit;
     font-size: 12px;
     outline: none;
 }
 
+#product-search::placeholder {
+    color: #969087;
+}
+
 #product-search:focus {
-    border-color: var(--olive);
+    border-color: #626B50;
 }
 
 /* STATUS */
 
 #shop-status {
     font-size: 11px;
-    color: var(--muted);
+    color: #817B72;
     margin-bottom: 20px;
 }
 
@@ -100,6 +109,8 @@
 
 #product-grid .product-card {
     min-width: 0;
+    background: #F8F5EF;
+    padding: 0 0 14px;
 }
 
 #product-grid .product-image {
@@ -107,7 +118,7 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
-    background: var(--dusty-pink);
+    background: #EAD5D0;
 }
 
 /* PRODUCT DETAILS */
@@ -116,23 +127,24 @@
     font-family: "Playfair Display", serif;
     font-size: 16px;
     font-weight: 500;
-    margin: 12px 0 8px;
-    color: var(--text);
+    margin: 12px 12px 8px;
+    color: #343D32;
 }
 
 .product-link {
     display: inline-block;
-    color: var(--olive);
+    margin-left: 12px;
+    color: #626B50;
     font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
-    border-bottom: 1px solid var(--pink);
+    border-bottom: 1px solid #C58F87;
     padding-bottom: 3px;
 }
 
 .product-link:hover {
-    color: var(--pink);
+    color: #B87968;
 }
 
 /* TABLET */
@@ -144,7 +156,7 @@
     }
 }
 
-/* MOBILE */
+/* PHONE */
 
 @media (max-width: 550px) {
     .shop-intro {
@@ -181,4 +193,12 @@
     #product-grid h3 {
         font-size: 14px;
     }
+}
+
+/* ACCESSIBILITY */
+
+.product-link:focus-visible,
+#product-search:focus-visible {
+    outline: 2px solid #B87968;
+    outline-offset: 3px;
 }

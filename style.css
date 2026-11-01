@@ -1,17 +1,24 @@
-/* ------------------------------
-   MIRU — MAIN STYLE
------------------------------- */
+
+/* =================================
+   MIRU — HOMEPAGE
+   Editorial / Soft Botanical
+================================= */
 
 :root {
-    --cream: #DEC6B8;
-    --white: #FFFFFF;
-    --olive: #444539;
-    --dark-olive: #343D2F;
-    --pink: #BB8071;
-    --dusty-pink: #E9D5D1;
+    --cream: #F2EAE0;
+    --white: #FFFCF7;
+    --olive: #626B50;
+    --dark-olive: #343D32;
+    --pink: #C58F87;
+    --dusty-pink: #EAD5D0;
     --text: #34372F;
-    --muted: #77786F;
-    --line: #E7E3DA;
+    --muted: #817B72;
+    --line: #E4D8CC;
+
+    --sage: #DCE1D3;
+    --sand: #E8D8C5;
+    --terracotta: #B87968;
+    --pale-yellow: #EEE6CC;
 }
 
 * {
@@ -42,8 +49,8 @@ button {
 /* ANNOUNCEMENT */
 
 .announcement {
-    background: var(--olive);
-    color: pink;
+    background: var(--dark-olive);
+    color: var(--dusty-pink);
     text-align: center;
     padding: 11px 15px;
     font-size: 9px;
@@ -51,20 +58,6 @@ button {
 }
 
 /* HEADER */
-
-.hero-image {
-    width: 150%;
-    max-width: 400px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.hero-image img {
-    display: block;
-    width: 150%;
-    height: 300px;
-    object-fit: contain;
-}
 
 .site-header {
     min-height: 95px;
@@ -88,7 +81,7 @@ button {
     font-family: "Playfair Display", serif;
     font-size: 39px;
     line-height: 1;
-    color: var(--olive);
+    color: var(--dark-olive);
 }
 
 .brand-tagline {
@@ -110,7 +103,7 @@ button {
 }
 
 .main-nav a:hover {
-    color: var(--pink);
+    color: var(--terracotta);
 }
 
 .menu-toggle {
@@ -129,6 +122,7 @@ button {
     grid-template-columns: 1fr 0.9fr;
     align-items: center;
     gap: 65px;
+    background: var(--cream);
 }
 
 .hero-content {
@@ -152,7 +146,7 @@ button {
 }
 
 .hero h1 em {
-    color: var(--olive);
+    color: var(--terracotta);
     font-weight: 500;
 }
 
@@ -176,12 +170,12 @@ button {
 }
 
 .button-dark {
-    background: var(--olive);
+    background: var(--dark-olive);
     color: white;
 }
 
 .button-dark:hover {
-    background: var(--dark-olive);
+    background: var(--terracotta);
     transform: translateY(-2px);
 }
 
@@ -189,8 +183,23 @@ button {
     font-size: 15px;
 }
 
-/* HERO ART */
+/* HERO IMAGE */
 
+.hero-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+/* HERO ART */
 
 .art-label,
 .art-bottom {
@@ -216,7 +225,7 @@ button {
     bottom: 76px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--cream);
+    background: var(--pale-yellow);
     padding: 10px 24px;
     text-align: center;
     z-index: 3;
@@ -225,7 +234,7 @@ button {
 
 .hero-plaque span {
     display: block;
-    color: var(--olive);
+    color: var(--dark-olive);
     font-family: "Playfair Display", serif;
     font-size: 25px;
 }
@@ -304,19 +313,19 @@ button {
 }
 
 .art-mug {
-    background: #EEE9DF;
+    background: #E9DED0;
 }
 
 .art-tote {
-    background: #E7E5DB;
+    background: #DCE1D3;
 }
 
 .art-notebook {
-    background: #E9D5D1;
+    background: #EAD5D0;
 }
 
 .art-bottle {
-    background: #E8EBDD;
+    background: #D9E0D7;
 }
 
 .product-object {
@@ -332,7 +341,7 @@ button {
     font-size: 19px;
 }
 
-/* MUG PLACEHOLDER */
+/* MUG */
 
 .mug-object {
     width: 105px;
@@ -355,7 +364,7 @@ button {
     z-index: -1;
 }
 
-/* TOTE PLACEHOLDER */
+/* TOTE */
 
 .tote-object {
     width: 125px;
@@ -378,7 +387,7 @@ button {
     left: 35px;
 }
 
-/* NOTEBOOK PLACEHOLDER */
+/* NOTEBOOK */
 
 .notebook-object {
     width: 112px;
@@ -395,7 +404,7 @@ button {
     font-size: 23px;
 }
 
-/* BOTTLE PLACEHOLDER */
+/* BOTTLE */
 
 .bottle-object {
     width: 75px;
@@ -447,14 +456,14 @@ button {
 }
 
 .product-number {
-    color: var(--pink);
+    color: var(--terracotta);
     font-size: 10px;
 }
 
 /* ABOUT */
 
 .about-section {
-    background: var(--olive);
+    background: var(--dark-olive);
     color: white;
     min-height: 390px;
     padding: 75px 12%;
@@ -467,7 +476,7 @@ button {
 .about-mark {
     font-family: "Playfair Display", serif;
     font-size: 150px;
-    color: var(--dusty-pink);
+    color: var(--pink);
     font-style: italic;
 }
 
@@ -503,7 +512,7 @@ button {
 
 .site-footer {
     padding: 55px 8% 22px;
-    background: var(--cream);
+    background: var(--sand);
 }
 
 .footer-top {
@@ -516,7 +525,7 @@ button {
 .footer-logo {
     font-family: "Playfair Display", serif;
     font-size: 38px;
-    color: var(--olive);
+    color: var(--dark-olive);
 }
 
 .footer-top p {
@@ -535,11 +544,11 @@ button {
 }
 
 .footer-links a:hover {
-    color: var(--pink);
+    color: var(--terracotta);
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #D3C4B5;
     padding-top: 18px;
     display: flex;
     justify-content: space-between;
@@ -700,7 +709,7 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--pink);
+    outline: 2px solid var(--terracotta);
     outline-offset: 4px;
 }
 
