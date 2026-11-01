@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Il tuo carrello — Miru</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="cart.css">
+
+    <script src="cart.js" defer></script>
+    <script src="cart-page.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cart-header">
+        <a href="index.html" class="cart-logo">miru<span>.</span></a>
+        <a href="shop.html" class="continue-link">CONTINUA LO SHOPPING →</a>
+    </header>
+
+    <main class="cart-main">
+
+        <p class="cart-eyebrow">MIRU / YOUR SELECTION</p>
+
+        <h1>Il tuo carrello.</h1>
+
+        <div class="cart-layout">
+
+            <section>
+                <div id="cart-items"></div>
+            </section>
+
+            <aside class="cart-summary">
+
+                <h2>Riepilogo</h2>
+
+                <div class="summary-line">
+                    <span>Prodotti</span>
+                    <span id="cart-subtotal">€0,00</span>
+                </div>
+
+                <div class="summary-line">
+                    <span>Spedizione</span>
+                    <span>Da calcolare</span>
+                </div>
+
+                <div class="summary-total">
+                    <span>Totale</span>
+                    <span id="cart-total">€0,00</span>
+                </div>
+
+                <button id="checkout-button" disabled>
+                    CHECKOUT IN ARRIVO
+                </button>
+
+                <p class="checkout-note">
+                    Il pagamento online non è ancora attivo.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="cart-footer">
+        MIRU — BORN SOMEWHERE TO DO SOMETHING
+    </footer>
+
+</body>
+</html>

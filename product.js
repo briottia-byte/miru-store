@@ -1,3 +1,4 @@
+
 const API_URL = "https://miru-api.briottia.workers.dev/products";
 
 const content = document.querySelector("#product-content");
@@ -26,31 +27,12 @@ function getAvailableVariants(product) {
     );
 }
 
-function updateProductImage(variantId) {
-    const image = document.querySelector("#product-image");
-    if (!image || !currentProduct) return;
-
-    const images = currentProduct.images || [];
-
-    const matchingImage = images.find(item =>
-        Array.isArray(item.variant_ids) &&
-        item.variant_ids.includes(Number(variantId))
-    );
-
-    const defaultImage = images.find(item => item.is_default);
-    const selectedImage = matchingImage || defaultImage || images[0];
-
-    if (selectedImage) {
-        image.src = selectedImage.src || selectedImage.url || "";
-    }
-}
-
 function updateVariant() {
     const select = document.querySelector("#variant-select");
     const price = document.querySelector("#product-price");
-    const availability = document.querySelector("#availability");
+    const image = document.querySelector("#product-image");
 
-    if (!select || !price || !availability) return;
+    if (!select || !price) return;
 
     const variant = currentProduct.variants.find(item =>
         String(item.id) === select.value
@@ -59,10 +41,22 @@ function updateVariant() {
     if (!variant) return;
 
     price.textContent = formatPrice(variant.price);
-    availability.textContent = "Disponibile";
-    availability.classList.remove("unavailable");
 
-    updateProductImage(variant.id);
+    const images = currentProduct.images || [];
+
+    const matchingImage = images.find(item =>
+        Array.isArray(item.variant_ids) &&
+        item.variant_ids.includes(Number(variant.id))
+    );
+
+    const defaultImage =
+        images.find(item => item.is_default) || images[0];
+
+    const selectedImage = matchingImage || defaultImage;
+
+    if (selectedImage && image) {
+        image.src = selectedImage.src || selectedImage.url || "";
+    }
 }
 
 function renderProduct(product) {
@@ -70,15 +64,13 @@ function renderProduct(product) {
 
     const variants = getAvailableVariants(product);
     const images = product.images || [];
-    const defaultImage = images.find(item => item.is_default) || images[0];
 
-    const imageUrl = defaultImage
-        ? (defaultImage.src || defaultImage.url || "")
-        : "";
+    const defaultImage =
+        images.find(item => item.is_default) || images[0];
 
     const firstVariant = variants[0];
 
-    content.innerHTML = "";
+    content.replaceChildren();
 
     const gallery = document.createElement("div");
     gallery.className = "product-gallery";
@@ -86,7 +78,7 @@ function renderProduct(product) {
     const image = document.createElement("img");
     image.id = "product-image";
     image.className = "main-image";
-    image.src = imageUrl;
+    image.src = defaultImage?.src || defaultImage?.url || "";
     image.alt = product.title || "Miru product";
 
     gallery.appendChild(image);
@@ -111,11 +103,12 @@ function renderProduct(product) {
 
     const description = document.createElement("p");
     description.className = "product-description";
-    description.textContent = product.description || "Scopri questo prodotto della collezione Miru.";
+    description.textContent =
+        product.description || "Scopri questo prodotto della collezione Miru.";
 
     info.append(category, title, price, description);
 
-    if (variants.length > 0) {
+    if (variants.length) {
         const label = document.createElement("label");
         label.className = "option-label";
         label.htmlFor = "variant-select";
@@ -141,17 +134,32 @@ function renderProduct(product) {
 
         const button = document.createElement("button");
         button.className = "shop-button";
-        button.textContent = "ACQUISTO ONLINE IN ARRIVO";
-        button.disabled = true;
+        button.textContent = "AGGIUNGI AL CARRELLO";
+
+        button.addEventListener("click", () => {
+            const selected = variants.find(item =>
+                String(item.id) === select.value
+            );
+
+            if (!selected) return;
+
+            addToCart(product, selected);
+
+            button.textContent = "AGGIUNTO AL CARRELLO ✓";
+
+            setTimeout(() => {
+                button.textContent = "AGGIUNGI AL CARRELLO";
+            }, 1800);
+        });
 
         const note = document.createElement("p");
         note.className = "product-note";
-        note.textContent = "Il sistema di pagamento online non è ancora attivo.";
+        note.textContent = "Puoi controllare i tuoi articoli nel carrello.";
 
         info.append(label, select, availability, button, note);
+
     } else {
         const availability = document.createElement("p");
-        availability.id = "availability";
         availability.className = "availability unavailable";
         availability.textContent = "Attualmente non disponibile.";
 
@@ -188,11 +196,13 @@ async function loadProduct() {
         }
 
         document.title = `${product.title} — Miru`;
+
         renderProduct(product);
 
     } catch (error) {
         content.textContent = error.message;
-        message.textContent = "Torna allo shop per scegliere un altro prodotto.";
+        message.textContent =
+            "Torna allo shop per scegliere un altro prodotto.";
     }
 }
 

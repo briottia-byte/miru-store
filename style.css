@@ -651,3 +651,61 @@ h3 {
         font-size: 37px;
     }
 }
+
+/* MIRU CART ICON */
+
+.cart-link {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--dark-olive);
+    transition: color .25s ease;
+}
+
+.cart-link:hover {
+    color: var(--terracotta);
+}
+
+.cart-link svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 50px;
+    background: var(--terracotta);
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        gap: 10px;
+    }
+
+    .main-nav {
+        gap: 12px;
+    }
+
+    .cart-link {
+        width: 32px;
+    }
+}
