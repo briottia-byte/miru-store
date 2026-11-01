@@ -1,0 +1,234 @@
+:root {
+    --cream: #F2EAE0;
+    --white: #FFFCF7;
+    --olive: #626B50;
+    --dark: #343D32;
+    --pink: #C58F87;
+    --terracotta: #B87968;
+    --text: #34372F;
+    --muted: #817B72;
+    --line: #E4D8CC;
+    --sage: #DCE1D3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+}
+
+.product-header {
+    height: 90px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+}
+
+.logo {
+    color: var(--dark);
+    font: 500 43px "Playfair Display", serif;
+    letter-spacing: -3px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--terracotta);
+}
+
+.back-link {
+    color: var(--dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+.product-page {
+    width: min(1120px, 88%);
+    margin: 55px auto 90px;
+}
+
+.eyebrow {
+    margin-bottom: 25px;
+    color: var(--olive);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.product-layout {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 65px;
+    align-items: start;
+}
+
+.product-gallery {
+    min-width: 0;
+}
+
+.main-image {
+    width: 100%;
+    aspect-ratio: 1 / 1.08;
+    object-fit: cover;
+    display: block;
+    background: #E9E1D7;
+}
+
+.product-info {
+    padding: 20px 0;
+}
+
+.product-category {
+    color: var(--terracotta);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.product-title {
+    margin: 15px 0;
+    color: var(--dark);
+    font: 400 clamp(34px, 5vw, 52px) "Playfair Display", serif;
+    line-height: 1.1;
+}
+
+.product-price {
+    margin: 22px 0;
+    color: var(--dark);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.product-description {
+    margin: 25px 0 35px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.option-label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.variant-select {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 15px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--white);
+    color: var(--dark);
+    font: inherit;
+    outline: none;
+}
+
+.variant-select:focus {
+    border-color: var(--olive);
+}
+
+.availability {
+    margin: 18px 0 25px;
+    color: var(--olive);
+    font-size: 12px;
+}
+
+.availability.unavailable {
+    color: #A34236;
+}
+
+.shop-button {
+    width: 100%;
+    min-height: 55px;
+    border: 1px solid var(--dark);
+    background: var(--dark);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.shop-button:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+}
+
+.shop-button:disabled {
+    background: #B8B5AC;
+    border-color: #B8B5AC;
+    cursor: not-allowed;
+}
+
+.product-note {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.loading,
+.product-message {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.product-footer {
+    padding: 30px 15px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .product-header {
+        height: 75px;
+        padding: 0 6%;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .back-link {
+        font-size: 9px;
+    }
+
+    .product-page {
+        width: 88%;
+        margin: 35px auto 60px;
+    }
+
+    .product-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-info {
+        padding-top: 5px;
+    }
+
+    .product-title {
+        font-size: 39px;
+    }
+}

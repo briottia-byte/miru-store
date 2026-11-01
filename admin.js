@@ -240,23 +240,95 @@ function renderProducts() {
 }
 
 async function editProduct(product) {
-    const title = prompt("Product title:", product.title || "");
+    const title = prompt(
+        "Nome del prodotto:",
+        product.title || ""
+    );
+
     if (title === null) return;
 
     const description = prompt(
-        "Product description:",
+        "Descrizione del prodotto:",
         product.description || ""
     );
+
     if (description === null) return;
+
+    const variants = product.variants || [];
+
+    if (!variants.length) {
+        showNotice("Questo prodotto non contiene varianti.", true);
+        return;
+    }
+
+    const updatedVariants = [];
+
+    for (const variant of variants) {
+        const currentPrice = (Number(variant.price) / 100)
+            .toFixed(2)
+            .replace(".", ",");
+
+        const priceInput = prompt(
+            `Prezzo in euro per "${variant.title || variant.id}":`,
+            currentPrice
+        );
+
+        if (priceInput === null) return;
+
+        const price = Number(
+            priceInput.trim().replace(",", ".")
+        );
+
+        if (!Number.isFinite(price) || price < 0) {
+            showNotice("Inserisci un prezzo valido.", true);
+            return;
+        }
+
+        let enabled = variant.is_enabled !== false;
+
+        if (variant.is_available === false) {
+            enabled = false;
+            alert(
+                `${variant.title || "Questa variante"} non è disponibile dal fornitore Printify.`
+            );
+        } else {
+            const status = prompt(
+                `Variante: ${variant.title || variant.id}\nScrivi SI per venderla oppure NO per disattivarla:`,
+                enabled ? "SI" : "NO"
+            );
+
+            if (status === null) return;
+
+            const answer = status.trim().toLowerCase();
+
+            if (!["si", "sì", "no"].includes(answer)) {
+                showNotice("Rispondi SI oppure NO.", true);
+                return;
+            }
+
+            enabled = answer !== "no";
+        }
+
+        updatedVariants.push({
+            id: variant.id,
+            price: Math.round(price * 100),
+            is_enabled: enabled
+        });
+    }
 
     try {
         await api(`/admin/products/${encodeURIComponent(product.id)}`, {
             method: "PUT",
-            body: JSON.stringify({ title, description })
+            body: JSON.stringify({
+                title: title.trim(),
+                description: description.trim(),
+                variants: updatedVariants
+            })
         });
 
-        showNotice("Product updated.");
+        showNotice("Prodotto aggiornato correttamente.");
         await loadProducts();
+
     } catch (error) {
         showNotice(error.message, true);
     }
