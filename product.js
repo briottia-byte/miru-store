@@ -32,7 +32,7 @@ function updateVariant() {
     const price = document.querySelector("#product-price");
     const image = document.querySelector("#product-image");
 
-    if (!select || !price) return;
+    if (!select || !price || !currentProduct) return;
 
     const variant = currentProduct.variants.find(item =>
         String(item.id) === select.value
@@ -104,11 +104,12 @@ function renderProduct(product) {
     const description = document.createElement("p");
     description.className = "product-description";
     description.textContent =
-        product.description || "Scopri questo prodotto della collezione Miru.";
+        product.description ||
+        "Scopri questo prodotto della collezione Miru.";
 
     info.append(category, title, price, description);
 
-    if (variants.length) {
+    if (variants.length > 0) {
         const label = document.createElement("label");
         label.className = "option-label";
         label.htmlFor = "variant-select";
@@ -121,7 +122,9 @@ function renderProduct(product) {
         variants.forEach(variant => {
             const option = document.createElement("option");
             option.value = variant.id;
-            option.textContent = variant.title || `Variante ${variant.id}`;
+            option.textContent =
+                variant.title || `Variante ${variant.id}`;
+
             select.appendChild(option);
         });
 
@@ -133,6 +136,7 @@ function renderProduct(product) {
         availability.textContent = "Disponibile";
 
         const button = document.createElement("button");
+        button.type = "button";
         button.className = "shop-button";
         button.textContent = "AGGIUNGI AL CARRELLO";
 
@@ -154,7 +158,8 @@ function renderProduct(product) {
 
         const note = document.createElement("p");
         note.className = "product-note";
-        note.textContent = "Puoi controllare i tuoi articoli nel carrello.";
+        note.textContent =
+            "Puoi controllare i tuoi articoli nel carrello.";
 
         info.append(label, select, availability, button, note);
 
@@ -200,7 +205,10 @@ async function loadProduct() {
         renderProduct(product);
 
     } catch (error) {
+        console.error("Miru product error:", error);
+
         content.textContent = error.message;
+
         message.textContent =
             "Torna allo shop per scegliere un altro prodotto.";
     }

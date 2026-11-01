@@ -3,8 +3,9 @@ const CART_KEY = "miru-cart";
 
 function getCart() {
     try {
-        return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-    } catch {
+        const cart = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(cart) ? cart : [];
+    } catch (error) {
         return [];
     }
 }
@@ -16,17 +17,19 @@ function saveCart(cart) {
 
 function updateCartCount() {
     const countElement = document.querySelector("#cart-count");
+
     if (!countElement) return;
 
-    const total = getCart().reduce(
-        (sum, item) => sum + item.quantity,
-        0
-    );
+    const total = getCart().reduce((sum, item) => {
+        return sum + (Number(item.quantity) || 0);
+    }, 0);
 
     countElement.textContent = total;
 }
 
 function addToCart(product, variant) {
+    if (!product || !variant) return;
+
     const cart = getCart();
 
     const existing = cart.find(item =>
@@ -44,9 +47,9 @@ function addToCart(product, variant) {
         cart.push({
             productId: product.id,
             variantId: variant.id,
-            title: product.title,
+            title: product.title || "Miru product",
             variantTitle: variant.title || "Standard",
-            price: Number(variant.price),
+            price: Number(variant.price) || 0,
             image: defaultImage?.src || defaultImage?.url || "",
             quantity: 1
         });
@@ -56,3 +59,5 @@ function addToCart(product, variant) {
 }
 
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
+window.addEventListener("storage", updateCartCount);
